@@ -74,5 +74,9 @@
     "collectCoverageFrom": [
       "index.js"
     ]
+  },
+  "author": {
+    "name": "Lakshmikanth Vallampati",
+    "url": "https://github.com/kanthvallampati/"
   }
 }
