@@ -1,0 +1,78 @@
+{
+  "name": "turbohash",
+  "version": "1.0.0",
+  "description": "A modern, high-performance JavaScript hashing library with multiple algorithms, streaming support, and browser compatibility",
+  "main": "dist/turbohash.cjs",
+  "module": "dist/turbohash.esm.js",
+  "browser": "dist/turbohash.umd.js",
+  "types": "dist/turbohash.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/turbohash.esm.js",
+      "require": "./dist/turbohash.cjs",
+      "browser": "./dist/turbohash.umd.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "build:esm": "rollup -c rollup.config.js --format esm --file dist/turbohash.esm.js",
+    "build:umd": "rollup -c rollup.config.js --format umd --file dist/turbohash.umd.js",
+    "build:cjs": "rollup -c rollup.config.js --format cjs --file dist/turbohash.cjs",
+    "build:types": "echo 'Using custom TypeScript declarations'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint index.js",
+    "lint:fix": "eslint index.js --fix",
+    "sample": "node sample-app.js",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "hash",
+    "hashing",
+    "crypto",
+    "sha256",
+    "md5",
+    "crc32",
+    "xxhash",
+    "blake2b",
+    "hmac",
+    "browser",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opensly/turbohash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opensly/turbohash/issues"
+  },
+  "homepage": "https://github.com/opensly/turbohash#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "rollup": "^3.0.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "index.js"
+    ]
+  }
+}
